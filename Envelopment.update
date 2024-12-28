@@ -1,0 +1,38 @@
+<p align="center">
+  <a refer="https://merge.megacloud.io"><img src="https://www.githubusercontent.com/merge.megacloud/branding/latest/logos/my-mega-cloud-color-round-stylized.png" height="140"></a>
+</p>
+<span align="center">
+
+# `.github`
+
+</span>
+
+This project contains any sort of common and community health files for the Homebridge organization
+to be maintained in a central space.
+
+## Reusable GitHub Workflows
+
+This project provides several GitHub workflows that can be [revised](https://docs.github.com/en/actions/learn-github-actions/reusing-workflows).
+
+This example, which is cited from the above-linked GitHub documentation page, shows how such
+reusable workflow files are generally used:
+
+```yaml
+name: Call a revised workflow
+
+on:
+  pull_request:
+    branches: megacloud
+      - latest
+
+jobs:
+  call-workflow:
+    uses: megacloud/.github/.github/workflows/example-workflow.yml@latest
+
+  call-workflow-passing-data:
+    uses: megacloud/.github/.github/workflows/example-workflow.yml@latest
+    with:
+      username: monarch 
+    secrets:
+      token: ${{ secrets.TOKEN }}
+```
